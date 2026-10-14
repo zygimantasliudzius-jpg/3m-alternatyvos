@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3M projekto alternatyvos</title>
+<style>
+  /* Layout: vienas siauras stulpelis telefonui; lipnus A·B·C perjungiklis viršuje, KTU juoda–geltona. */
+  :root {
+    --bg: #000000;
+    --surface: #2b2b2b;
+    --line: #8c8c8c;
+    --fg: #ffffff;
+    --muted: #c4c4c4;
+    --accent: #ffff00;
+    --on-accent: #000000;
+    --display: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --body: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding-inline: 18px;
+    padding-block: 20px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  header { display: flex; flex-direction: column; gap: 6px; border-bottom: 2px solid var(--fg); padding-bottom: 14px; }
+  .kicker { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 0; }
+  h1 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.2; margin: 0; text-wrap: balance; }
+  .lead { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat { border-left: 4px solid var(--accent); padding: 6px 12px; min-width: 0; }
+  .stat b { display: block; font-family: var(--display); font-size: 22px; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 14px; color: var(--muted); }
+
+  nav {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 2;
+    background: var(--bg);
+    padding-block: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--fg);
+    border: 2px solid var(--fg);
+    padding: 8px 0;
+  }
+  nav a:focus-visible, nav a:hover { background: var(--accent); color: var(--on-accent); border-color: var(--accent); outline: none; }
+
+  .alt { background: var(--surface); border: 2px solid var(--fg); padding: 18px; display: flex; flex-direction: column; gap: 12px; scroll-margin-top: 72px; }
+  .alt-head { display: flex; align-items: center; gap: 14px; }
+  .letter { font-family: var(--display); font-weight: 700; font-size: 48px; line-height: 1; color: var(--accent); }
+  .alt h2 { font-family: var(--display); font-weight: 600; font-size: 20px; line-height: 1.25; margin: 0; text-wrap: balance; }
+  .alt p { margin: 0; }
+  .cost { font-family: var(--display); font-weight: 700; font-size: 17px; background: var(--accent); color: var(--on-accent); padding: 8px 12px; font-variant-numeric: tabular-nums; }
+  .cost small { display: block; font-family: var(--body); font-weight: 400; font-size: 14px; }
+  h3 { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 6px 0 4px; }
+  ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+  li::marker { color: var(--accent); }
+
+  footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 12px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">Diskusija · Kokybės standartai</p>
+    <h1>„3M“ lipniosios juostos projektas: sprendimo alternatyvos</h1>
+    <p class="lead">Hipotetinis 2005 m. projektas pagal realią „3M“ istoriją. Laikykite šį puslapį atidarytą balsavimams.</p>
+  </header>
+
+  <section class="stats" aria-label="Pradinė situacija">
+    <div class="stat"><b>12 %</b><span>bandinių neišlaiko sukibimo po 10 naudojimo ciklų</span></div>
+    <div class="stat"><b>≥ 95 %</b><span>gaminių turi atitikti reikalavimą</span></div>
+    <div class="stat"><b>8 sav.</b><span>iki planuoto pateikimo rinkai</span></div>
+    <div class="stat"><b>400 tūkst. USD</b><span>likęs biudžetas iš 2 mln.</span></div>
+  </section>
+
+  <nav aria-label="Alternatyvos">
+    <a href="#a">A</a>
+    <a href="#b">B</a>
+    <a href="#c">C</a>
+  </nav>
+
+  <article class="alt" id="a">
+    <div class="alt-head"><span class="letter" aria-hidden="true">A</span><h2>Griežtas „Six Sigma“ taikymas</h2></div>
+    <p>Sustabdyti naujų produkto variantų kūrimą, atlikti išsamią neatitikčių analizę, standartizuoti procesą ir tik tada tęsti pasirengimą gamybai.</p>
+    <div class="cost">260 tūkst. USD · ~7 savaitės<small>papildomai analizei ir bandymams; platesnis pateikimas rinkai gali vėluoti</small></div>
+    <div>
+      <h3>Privalumai</h3>
+      <ul>
+        <li>Didesnė tikimybė nustatyti ir pašalinti pagrindines defektų priežastis.</li>
+        <li>Geresnis proceso pakartojamumas ir kokybės kontrolė.</li>
+        <li>Mažesnė nekokybiško produkto pateikimo rinkai rizika.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Trūkumai</h3>
+      <ul>
+        <li>Papildomi bandymai ir procedūros gali atidėti produkto pateikimą rinkai.</li>
+        <li>Sumažėja galimybė eksperimentuoti.</li>
+        <li>Reikalingos didesnės papildomos išlaidos.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="alt" id="b">
+    <div class="alt-head"><span class="letter" aria-hidden="true">B</span><h2>Lankstus kokybės valdymas</h2></div>
+    <p>Taikyti „Six Sigma“ tik svarbiausiems kokybės rodikliams ir gamybos procesams, tačiau suteikti R&amp;D komandai daugiau savarankiškumo eksperimentuojant.</p>
+    <div class="cost">170 tūkst. USD · ~4 savaitės<small>tikslinei analizei ir bandymams</small></div>
+    <div>
+      <h3>Privalumai</h3>
+      <ul>
+        <li>Suderinama būtinoji kokybės kontrolė ir kūrybinė laisvė.</li>
+        <li>Galima greičiau nustatyti svarbiausias defektų priežastis.</li>
+        <li>Mažiau procedūrų ir mažesnės administracinės sąnaudos.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Trūkumai</h3>
+      <ul>
+        <li>Ne visi galimi neatitikimai būtų išsamiai išanalizuoti.</li>
+        <li>Reikia aiškiai nustatyti ribą tarp kontroliuojamų procesų ir laisvų eksperimentų.</li>
+        <li>Sudėtingiau koordinuoti skirtingus komandos darbo metodus.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="alt" id="c">
+    <div class="alt-head"><span class="letter" aria-hidden="true">C</span><h2>Spartus produkto vystymas ir ribotas bandymas rinkoje</h2></div>
+    <p>Tęsti eksperimentus su minimalia papildoma dokumentacija. Atrinkti pradinius bandymus atitinkančius gaminius ir pateikti juos nedidelei savanoriškai klientų grupei kontroliuojamam naudojimo bandymui. Masinė gamyba nepradedama, kol nepatvirtintas jos stabilumas.</p>
+    <div class="cost">80 tūkst. USD · ~2 savaitės<small>pasirengimui ribotam bandymui</small></div>
+    <div>
+      <h3>Privalumai</h3>
+      <ul>
+        <li>Greičiausiai gaunamas klientų grįžtamasis ryšys.</li>
+        <li>Daugiau laisvės produkto vystymui.</li>
+        <li>Mažiausios pradinės papildomos sąnaudos.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Trūkumai</h3>
+      <ul>
+        <li>Net ir iš anksto patikrintų gaminių ilgalaikis patikimumas gali būti neaiškus.</li>
+        <li>Ribotas bandymas nepakeičia pasirengimo serijinei gamybai.</li>
+        <li>Nepasiteisinęs bandymas gali pakenkti klientų pasitikėjimui.</li>
+      </ul>
+    </div>
+  </article>
+
+  <footer>Ž. Liudžius, L. Račkauskas, Ž. Latkauskas · KTU, 2026-10-15. Projektas, finansiniai duomenys ir sprendimai – išgalvoti.</footer>
+</div>
+</body>
+</html>
